@@ -1,0 +1,49 @@
+
+################################################################################
+# Settings for paired-end
+
+# Correspondance to ISR library type
+# https://salmon.readthedocs.io/en/latest/library_type.html
+# the recommended default --fr for Illumina works
+# Do not report discordant or only single mate mapping
+# Suppress SAM records for reads that failed to align.
+# Also, use fragment size larger than the 500 default
+bowtie_pe: "--fr --no-discordant --no-mixed --no-unal --maxins 700"
+# (p)aired, (B)oth ends,  check (P)airs
+# reverse (s)trand
+# -D 700 for larger fragment size
+#
+# Note: Please do not set '-s 2' here, which is controlled by 'reverse' column
+#       in samples.csv.
+featurecount_pe: "--fracOverlap 0.5 --largestOverlap -p -B -P -D 700 -F SAF"
+
+# 30 mapq corersponds to probability of mapping to other position 0.001
+filter_pe: "-f bam -F 'proper_pair and not unmapped and mapping_quality >= 30'"
+
+################################################################################
+# Settings for single-end
+
+# Correspondance to SR library type by salmon
+# https://salmon.readthedocs.io/en/latest/library_type.html
+bowtie_se: ""
+# Note: Please do not set '-s 2' here, which is controlled by 'reverse' column
+#       in samples.csv.
+featurecount_se: "--fracOverlap 0.5 --largestOverlap -F SAF"
+
+# 30 mapq corersponds to probability of mapping to other position 0.001
+filter_se: "-f bam -F 'not unmapped and mapping_quality >= 30'"
+
+################################################################################
+# Browser
+
+# Under which URL you wish to publish to have the browser accessible
+deploy_url: 'http://localhost:3000'
+
+# Release URL of Jbrowser to use
+jbrowse_url: 'https://github.com/GMOD/jbrowse-components/releases/download/v2.2.0/jbrowse-web-v2.2.0.zip'
+
+# short id for browser, suggestion: Use the KEGG organism identifier
+browser_short: 'xyz'
+browser_name: 'RNA-seq browser'
+
+################################################################################

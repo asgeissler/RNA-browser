@@ -1,0 +1,14 @@
+analysis
+data
+browser
+multiqc
+jbrowse*.zip
+
+genome.*
+samples.csv
+
+logs
+slurmlogs
+
+.snakemake
+
