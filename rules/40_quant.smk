@@ -69,7 +69,7 @@ rule feature_counts:
     log:
         "logs/subread/{name}.log"
     wrapper:
-        "v1.1.0/bio/subread/featurecounts"
+        "v3.3.1/bio/subread/featurecounts"
 
 ################################################################################
 

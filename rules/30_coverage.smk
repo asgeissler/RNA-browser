@@ -60,7 +60,7 @@ rule genomecov_bam:
     log:
         "logs/genomecov/{name}-{strand}.log"
     wrapper:
-        "v1.2.0/bio/bedtools/genomecov"
+        "v3.3.1/bio/bedtools/genomecov"
 
 ################################################################################
 # prepare coverage for browser
@@ -94,7 +94,7 @@ rule bedtools_sort:
     log:
         "logs/sorted/{name}-{strand}.log"
     wrapper:
-        "v1.12.2/bio/bedtools/sort"
+        "v3.3.1/bio/bedtools/sort"
 
 ################################################################################
 
@@ -109,4 +109,4 @@ rule bedGraphToBigWig:
         "logs/bigwig/{name}-{strand}.log"
     params:
     wrapper:
-        "v1.12.2/bio/ucsc/bedGraphToBigWig"
+        "v3.3.1/bio/ucsc/bedGraphToBigWig"

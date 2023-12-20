@@ -24,7 +24,7 @@ rule sambamba_filter:
         extra = filter_para
     threads: 16
     wrapper:
-        "v1.12.2/bio/sambamba/view"
+        "v3.3.1/bio/sambamba/view"
 
 ################################################################################
 
@@ -40,7 +40,7 @@ rule sambamba_sort:
         ""
     threads: 16
     wrapper:
-        "v1.12.2/bio/sambamba/sort"
+        "v3.3.1/bio/sambamba/sort"
 
 ################################################################################
 
@@ -53,7 +53,7 @@ rule sambamba_index:
         "logs/sambamba-index/{name}.log"
     threads: 8
     wrapper:
-        "v1.12.2/bio/sambamba/index"
+        "v3.3.1/bio/sambamba/index"
 
 ################################################################################
 
@@ -68,4 +68,4 @@ checkpoint sambamba_count:
         extra="-c"
     threads: 8
     wrapper:
-        "v1.12.2/bio/sambamba/view"
+        "v3.3.1/bio/sambamba/view"

@@ -28,7 +28,7 @@ rule faToTwoBit_fa_gz:
     output:
         "genome.2bit"
     wrapper:
-        "v1.12.2/bio/ucsc/faToTwoBit"
+        "v3.3.1/bio/ucsc/faToTwoBit"
 
 ################################################################################
 
@@ -38,7 +38,7 @@ rule twoBitInfo:
     output:
         "genome.info"
     wrapper:
-        "v1.12.2/bio/ucsc/twoBitInfo"
+        "v3.3.1/bio/ucsc/twoBitInfo"
 
 ################################################################################
 
@@ -56,7 +56,7 @@ rule bowtie2_build:
         'logs/bowtie2_build.log'
     threads: 8
     wrapper:
-        "v1.1.0/bio/bowtie2/build"
+        "v3.3.1/bio/bowtie2/build"
 
 ################################################################################
 
@@ -73,4 +73,4 @@ rule bowtie2:
         "logs/bowtie2_map/{name}.log"
     threads: 16
     wrapper:
-        "v1.1.0/bio/bowtie2/align"
+        "v3.3.1/bio/bowtie2/align"

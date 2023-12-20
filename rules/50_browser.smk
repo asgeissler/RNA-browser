@@ -54,7 +54,7 @@ rule browser_genome_index:
     params:
         extra=""
     wrapper:
-        "v1.19.0/bio/samtools/faidx"
+        "v3.3.1/bio/samtools/faidx"
 
 
 
