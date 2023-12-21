@@ -18,4 +18,4 @@ if [ ! -d slurmlogs ]; then
   mkdir slurmlogs
 fi
 
-snakemake --profile clusterprofile_slurm $target
+snakemake --profile clusterprofile_slurm_singularity $target

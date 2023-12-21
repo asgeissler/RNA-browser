@@ -15,6 +15,8 @@ fi
 
 
 snakemake --cores all                  \
+    --use-singularity                  \
+    --singularity-prefix /home/local/src/singularity_images/snakemake-pipelines \
     --use-conda --conda-frontend mamba \
     --keep-going                       \
     $target

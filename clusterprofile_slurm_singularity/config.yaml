@@ -24,3 +24,5 @@ printshellcmds: True
 scheduler: greedy
 use-conda: True
 conda-frontend: mamba
+use-singularity: True
+singularity-prefix: /home/local/src/singularity_images/snakemake-pipelines
