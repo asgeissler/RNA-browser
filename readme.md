@@ -282,3 +282,26 @@ You might want to also specify the browser title and name that is assigned
 per default (`browser_short` and `browser_name`).
 
 Currently, RNA-browser used the Jbrowse package version 2.2.0 (`jbrowse_url`).
+
+## Developer note
+
+
+
+When using this pipeline in it's containerized form (e.g. run_singularity.sh), then an image that was build with the following commands will be downloaded.
+
+    # After a complete run of the pipeline (to make sure all works), snapshot the conda envs
+    snakemake --containerize > Dockerfile
+    # Convert to a singularity file
+    # mambaforge does not have curl installed -> use wget
+    # `curl URL -o PATH` becomes `wget URL -O PATH`
+    # spython incorrectly doubles the '/environment.yaml/environment.yaml'
+    spython recipe Dockerfile                              | \
+        sed 's,curl \([^ ]*\) -o \([^ ]*\),wget \1 -O \2,' | \
+        sed 's,/environment.yaml/environment.yaml,/environment.yaml,' > Singularity
+    singularity build --fakeroot rnabrowser-0.1.sif Singularity
+    # setup repositry credential
+    singularity remote login --username <USER> oras://ghcr.io
+    # + enter secret access token
+    # upload image
+    singularity push rnabrowser-0.1.sif oras://ghcr.io/asgeissler/rnabrowser:0.1
+

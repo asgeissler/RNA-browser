@@ -12,6 +12,9 @@ min_version("7.9.0")
 # the global config file
 configfile: 'config.yaml'
 
+# reproducible container image for docker/singularity
+containerized: 'oras://ghcr.io/asgeissler/rnabrowser:0.1'
+
 ################################################################################
 ################################################################################
 # Load and check samples configuration
