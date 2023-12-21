@@ -131,13 +131,14 @@ rule multiqc:
         sample_wise("logs/bowtie2_map/{name}.log"),
         sample_wise("analysis/40_subread/{name}.featureCounts.summary"),
     output:
-        "multiqc/multiqc.html"
+        "multiqc/multiqc.html",
+        directory("multiqc/multiqc_data")
     params:
         ""
     log:
         "logs/multiqc.log"
     wrapper:
-        "v1.1.0/bio/multiqc"
+        "v3.3.1/bio/multiqc"
 
 ################################################################################
 
