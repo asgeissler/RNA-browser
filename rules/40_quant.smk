@@ -55,13 +55,12 @@ def fc_helper(wildcards):
 
 rule feature_counts:
     input:
-        sam = "analysis/21_sorted/{name}.bam",
+        samples = "analysis/21_sorted/{name}.bam",
         annotation = "genes.saf"
     output:
         multiext("analysis/40_subread/{name}",
                  ".featureCounts",
-                 ".featureCounts.summary",
-                 ".featureCounts.jcounts")
+                 ".featureCounts.summary")
     threads:
         8
     params:

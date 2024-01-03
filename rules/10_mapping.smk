@@ -44,7 +44,7 @@ rule twoBitInfo:
 
 rule bowtie2_build:
     input:
-        reference = "genome.fna.gz"
+        ref = "genome.fna.gz"
     output:
         multiext(
             "genome",
@@ -63,11 +63,13 @@ rule bowtie2_build:
 rule bowtie2:
     input:
         sample = bowtie_in,
-        wait_for_index = 'genome.1.bt2'
+        idx = multiext(
+            "genome",
+            ".1.bt2", ".2.bt2", ".3.bt2", ".4.bt2", ".rev.1.bt2", ".rev.2.bt2",
+        )
     output:
         bowtie_out
     params:
-        index = 'genome',
         extra = bowtie_para
     log:
         "logs/bowtie2_map/{name}.log"
