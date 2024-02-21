@@ -78,10 +78,11 @@ if 'pair' in sample_files.columns:
             """).format(', '.join(x.index[x != 2])))
 
 if 'reverse' in sample_files.columns:
-    if set(sample_files['reverse']) != {'yes', 'no'}:
+    if len(set(sample_files['reverse']) - {'yes', 'no'}) > 0:
         raise Exception(cleandoc("""
             Please use only yes/no in column reverse.
             """))
+    # convert to boolean
     sample_files['reverse'] = sample_files['reverse'] == 'yes'
 else:
     # Per default do revers.
