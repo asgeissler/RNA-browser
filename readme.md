@@ -14,8 +14,8 @@ For pre-processing (*e.g.* quality filtering) please consider using
 
 If you use the **RNA-browser**, please consider citing:
 
-"Genome-scale prediction of stable housekeeping genes in Synechococcus sp. PCC 7002". 
-Adrian Sven Geissler, Elena Carrasquer Alvarez, Christian Anthon, Niels-Ulrik Frigaard, Jan Gorodkin, Stefan Ernst Seemann  
+"Exploring the RNA structure regulatory potential in 202 cyanobacterial genomes"  
+AS  Geissler, EC Alvarez, C Anthon, NU Frigaard, J Gorodkin, and SE Seemann  
 *in preparation*
 
 For a showcase of a browser created by this pipeline, please have a look at this 
