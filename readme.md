@@ -14,9 +14,11 @@ For pre-processing (*e.g.* quality filtering) please consider using
 
 If you use the **RNA-browser**, please consider citing:
 
-"Exploring the RNA structure regulatory potential in 202 cyanobacterial genomes"  
+
+"Exploring the regulatory potential of RNA structures in 202 cyanobacterial genomes"  
 AS  Geissler, EC Alvarez, C Anthon, NU Frigaard, J Gorodkin, and SE Seemann  
-*in preparation*
+*submitted*
+
 
 For a showcase of a browser created by this pipeline, please have a look at this 
 [browser](https://rth.dk/resources/cyanobacteria/stable-genes/) for RNA-seq data in *Synechococcus sp.* PCC 7002.
